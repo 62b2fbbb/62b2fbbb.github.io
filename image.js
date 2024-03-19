@@ -3,18 +3,27 @@ let text1 = document.getElementById("figcaption1");
 function textanimation(trigger,figcaption){
 trigger.addEventListener("mouseover", ()=>{
 		console.log("textanimation in use");
+		trigger.style.animationName = "upper";
+		trigger.style.animationDuration = "1.0s";
+		trigger.style.animationFillMode = "forwards";
+		trigger.style.animationTimingFunction = "ease-out";
 		figcaption.style.animationName = "downer";
-		figcaption.style.animationDuration = "0.7s";
+		figcaption.style.animationDuration = "0.8s";
 		figcaption.style.animationFillMode = "forwards";
 		figcaption.style.animationTimingFunction = "ease-out";
-		// figcaption.style.zIndex = "8";
 	})
 trigger.addEventListener("mouseleave", () => {
-		console.log("leave is ok")
-		figcaption.style.animationName = "return"
-		figcaption.style.animationDuration = "0.7s";
+		setTimeout(function() {console.log("leave is ok");
+		trigger.style.animationName = "returnimage";
+		trigger.style.animationDuration = "1.0s";
+		trigger.style.animationFillMode = "forwards";
+		trigger.style.animationTimingFunction = "ease-out";
+		figcaption.style.animationName = "returntext"
+		figcaption.style.animationDuration = "0.8s";
 		figcaption.style.animationFillMode = "forwards";
-		figcaption.style.animationTimingFunction = "linear";
+		figcaption.style.animationTimingFunction = "ease-out";
+						},1000)
+		
 })
 }
 function loader (){
