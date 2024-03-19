@@ -14,13 +14,19 @@
 		transform:translate(-50%,500%);
 	}
 }
-@keyframes return {
+@keyframes returnimage {
 	0% {
-		top:50%;
-		left:50%;
+		transform:translate(0,-40%);
 	}
 	100% {
-		top:50%;
-		left:50%;
+		transform:translate(0%,0%);
+	}
+}
+@keyframes returntext {
+	0% {
+		transform:translate(-50%,500%);
+	}
+	100% {
+		transform:translate(-50%,0);
 	}
 }
