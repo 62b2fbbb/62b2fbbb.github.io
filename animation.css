@@ -8,10 +8,10 @@
 }
 @keyframes downer {
 	0% {
-		transform:translate(-50%,0);
+		transform:translate(0,0);
 	}
 	100% {
-		transform:translate(-50%,500%);
+		transform:translate(0,500%);
 	}
 }
 @keyframes returnimage {
@@ -23,10 +23,18 @@
 	}
 }
 @keyframes returntext {
+	/* from { */
+		/* top:500%; */
+		/* right:50%; */
+	/* } */
+	/* to: { */
+		/* top:50%; */
+		/* right:50%; */
+	/* } */
 	0% {
-		transform:translate(-50%,500%);
+		transform:translate(0,500%);
 	}
 	100% {
-		transform:translate(-50%,0);
+		transform:translate(0,0);
 	}
 }
