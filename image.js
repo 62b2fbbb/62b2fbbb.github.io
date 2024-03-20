@@ -5,29 +5,40 @@ let img2 = document.getElementById("img2");
 let text3 = document.getElementById("figcaption3");
 let img3 = document.getElementById("img3");
 function textanimation(trigger,figcaption){
-trigger.addEventListener("mouseover", ()=>{
+trigger.addEventListener("mouseenter", ()=>{
 		console.log("textanimation in use");
+		event.preventDefault();
 		trigger.style.animationName = "upper";
 		trigger.style.animationDuration = "1.0s";
 		trigger.style.animationFillMode = "forwards";
 		trigger.style.animationTimingFunction = "ease-out";
+		trigger.style.pointerEvents = "none";
+		trigger.style.cursor = "not-allowed"
 		figcaption.style.animationName = "downer";
 		figcaption.style.animationDuration = "0.8s";
 		figcaption.style.animationFillMode = "forwards";
 		figcaption.style.animationTimingFunction = "ease-out";
+		setTimeout(function(){
+			trigger.style.pointerEvents = "none";
+		},2000)
 	})
 trigger.addEventListener("mouseleave", () => {
-		setTimeout(function() {console.log("leave is ok");
+		setTimeout(function() {
+			console.log("leave is ok");
 		trigger.style.animationName = "returnimage";
 		trigger.style.animationDuration = "1.0s";
 		trigger.style.animationFillMode = "forwards";
 		trigger.style.animationTimingFunction = "ease-out";
+		
+		trigger.style.cursor = "allowed"
 		figcaption.style.animationName = "returntext"
 		figcaption.style.animationDuration = "0.8s";
 		figcaption.style.animationFillMode = "forwards";
 		figcaption.style.animationTimingFunction = "ease-out";
-						},1000)
-		
+		},1000)
+		setTimeout(function(){
+			trigger.style.pointerEvents = "auto";
+		},2000)
 })
 }
 function loader (){
