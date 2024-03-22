@@ -38,7 +38,7 @@ trigger.addEventListener("mouseleave", () => {
 		},1000)
 		setTimeout(function(){
 			trigger.style.pointerEvents = "auto";
-		},2000)
+		},4000)
 })
 }
 function loader (){
